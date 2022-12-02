@@ -3,6 +3,7 @@ package solera.project.hesiu.harsa.forum.app.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,8 @@ public class PostController {
 	@Autowired
 	private ThreadService threadService;
 	
+	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("{id}")
     public Post addThread(@RequestBody Post post,@PathVariable int id) {
       CustomThread customThread=threadService.findById(id);
@@ -35,9 +38,9 @@ public class PostController {
         
     }
 	
-	@GetMapping
-    public List<Post> findAllPosts() {
-        return postService.findAll();
+	@GetMapping("{threadId}")
+    public List<Post> findAllPosts(@PathVariable int threadId) {
+        return postService.findAll(threadId);
     }
 	
 	@GetMapping("{threadId}/{postId}")
@@ -51,4 +54,6 @@ public class PostController {
       
       return "";
     }
+	
+	
 }

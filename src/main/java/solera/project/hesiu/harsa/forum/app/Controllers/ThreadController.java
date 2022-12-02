@@ -42,5 +42,10 @@ public class ThreadController {
     public String deleteThread(@PathVariable int id) {
         return threadService.deleteThread(id);
     }
+	@GetMapping("/getByName/{threadName}")
+    public int getNameOfThread(@PathVariable String threadName) {
+		return threadService.findNameOfThread(threadName);
+    }
+	
 
 }

@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class CustomThread {
 	
-	public CustomThread(int id, String name) {
+	public CustomThread(int id, String title) {
 		this.id = id;
-		this.name = name;
+		this.title = title;
 	}
 	
 	public CustomThread() {
@@ -23,7 +23,7 @@ public class CustomThread {
 	}
 	
 	private int id;
-	private String name;
+	private String title;
 	private List<Post> posts= new ArrayList<>();
 	public int getId() {
 		return id;
@@ -33,13 +33,6 @@ public class CustomThread {
 		this.id = (int) l;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public List<Post> getPosts() {
 		return posts;
@@ -47,6 +40,10 @@ public class CustomThread {
 
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

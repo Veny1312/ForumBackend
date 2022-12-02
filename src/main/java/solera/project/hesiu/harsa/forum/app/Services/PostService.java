@@ -30,8 +30,8 @@ public class PostService implements IPostService {
 	}
 
 	@Override
-	public List<Post> findAll() {
-		return postRepository.getAllPosts();
+	public List<Post> findAll(int threadId) {
+		return postRepository.getAllPosts(threadId);
 	}
 
 	@Override

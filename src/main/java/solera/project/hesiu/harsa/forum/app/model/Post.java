@@ -6,19 +6,17 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Post {
 	
 	private int id;
-	private String name;
+	private String postTitle;
 	private String category;
 	private String postBody;
 	private String image;
 	
-	public Post(int id, String name, String category, String postBody, String image) {
+	public Post(int id, String postTitle, String category, String postBody, String image) {
 		this.id = id;
-		this.name = name;
+		this.postTitle = postTitle;
 		this.category = category;
 		this.postBody = postBody;
 		this.image = image;
@@ -38,11 +36,11 @@ public class Post {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getPostTitle() {
+		return postTitle;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPostTitle(String postTitle) {
+		this.postTitle = postTitle;
 	}
 	public String getPostBody() {
 		return postBody;

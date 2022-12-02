@@ -8,7 +8,7 @@ import solera.project.hesiu.harsa.forum.app.model.Post;
 public interface IPostService {
 
 
-	List<Post> findAll();
+	List<Post> findAll(int threadId);
 
 	List<Post> findByThreadId(int threadId);
 

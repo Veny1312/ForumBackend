@@ -19,8 +19,8 @@ private ThreadRepository repository;
 		repository.findById(id).getPosts().add(post);
 	}
 
-	public List<Post> getAllPosts() {
-		return list;
+	public List<Post> getAllPosts(int threadId) {
+		return repository.findById(threadId).getPosts();
 	}
 
 	public Post findById(int threadId,int postId) {
