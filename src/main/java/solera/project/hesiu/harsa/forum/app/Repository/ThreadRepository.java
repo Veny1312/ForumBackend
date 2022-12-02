@@ -33,13 +33,13 @@ public class ThreadRepository {
 	}
 
 	public List<CustomThread> search(String name) {
-		return list.stream().filter(x -> x.getName().startsWith(name)).collect(Collectors.toList());
+		return list.stream().filter(x -> x.getTitle().equals(name)).collect(Collectors.toList());
 	}
 
 	public CustomThread save(CustomThread t) {
 		CustomThread thread = new CustomThread();
 		thread.setId(t.getId());
-		thread.setName(t.getName());
+		thread.setTitle(t.getTitle());
 		list.add(thread);
 		return thread;
 	}
@@ -47,5 +47,9 @@ public class ThreadRepository {
 	public String delete(Integer id) {
 		list.removeIf(x -> x.getId() == (id));
 		return null;
+	}
+
+	public int findThreadId(String threadName) {
+		return list.stream().filter(x->x.getTitle().equals(threadName)).findFirst().get().getId();
 	}
 }

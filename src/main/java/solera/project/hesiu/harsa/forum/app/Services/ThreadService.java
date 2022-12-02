@@ -47,5 +47,10 @@ public class ThreadService implements IThreadService {
 		return null;
 	}
 
+	public int findNameOfThread(String threadName) {
+		return threadRepository.findThreadId(threadName);
+		
+	}
+
 	
 }
